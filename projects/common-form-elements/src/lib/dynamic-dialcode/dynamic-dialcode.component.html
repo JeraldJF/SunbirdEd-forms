@@ -1,5 +1,5 @@
 <div class="sb-input">
-  <label *ngIf="label" [attr.data-title]="field.description ? field.description : null">
+  <label *ngIf="label" class="label-text" [attr.data-title]="field.description ? field.description : null">
     {{label}}
     <a *ngIf="isEditable && isDialcodeRequired == 'yes' && !disabled" (click)="editDialCode()" class="sb-edit-btn">EDIT</a>
   </label>
@@ -28,7 +28,7 @@
   </div>
 
   <ng-container *ngFor="let validation of validations">
-    <div class="cf-error"
+    <div class="cf-error label-text"
       *ngIf="(validation.type && (validation.type).toLowerCase() && validation.message && formControlRef.errors && formControlRef.errors[(validation.type).toLowerCase()] && (formControlRef.dirty || formControlRef.touched))">
       {{ validation.message }}
     </div>
