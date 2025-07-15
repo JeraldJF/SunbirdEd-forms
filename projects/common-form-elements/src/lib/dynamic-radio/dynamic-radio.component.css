@@ -14,3 +14,7 @@ label {
 .sb-radio-btn-checkbox {
   margin-top: 10px;
 }
+
+:host-context(html[dir="rtl"]) .label-text {
+  display: flex;
+}
