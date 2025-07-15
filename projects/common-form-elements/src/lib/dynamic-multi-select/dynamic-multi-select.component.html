@@ -1,5 +1,5 @@
 <div class="sb-dropdown" *ngIf="!type && formControlRef?.isVisible === 'yes'">
-  <label [attr.data-title]="field.description ? field.description : null">{{label}} {{context && 'has context'}}  {{context ?  field.context : '' }}</label>
+  <label class="label-text" [attr.data-title]="field.description ? field.description : null">{{label}} {{context && 'has context'}}  {{context ?  field.context : '' }}</label>
   <ng-container *ngIf="options">
     <div class="dropdown-container">
       <sb-icon-dropdown class="dropdown-icon"></sb-icon-dropdown>
@@ -48,7 +48,7 @@
   </ng-container>
 </div>
 <ng-container *ngFor="let validation of validations">
-  <div class="cf-error"
+  <div class="cf-error label-text"
     *ngIf="(validation.type && (validation.type).toLowerCase() && validation.message && formControlRef.errors && formControlRef.errors[(validation.type).toLowerCase()] && (formControlRef.dirty || formControlRef.touched))">
     {{ validation.message }}
   </div>

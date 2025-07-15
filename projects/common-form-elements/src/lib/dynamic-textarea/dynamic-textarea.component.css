@@ -42,3 +42,7 @@ label {
   font-family: "Noto Sans";
   font-size: 12px;
 }
+
+:host-context(html[dir="rtl"]) .label-text {
+  display: flex;
+}

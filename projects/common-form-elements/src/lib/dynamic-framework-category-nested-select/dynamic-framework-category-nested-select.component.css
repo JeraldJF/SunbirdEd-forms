@@ -323,3 +323,7 @@ label{
 .sb-modal-dropdown-web ul li label{
   padding-left: 0.5em;
 }
+
+:host-context(html[dir="rtl"]) .label-text {
+  display: flex;
+}

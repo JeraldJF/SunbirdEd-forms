@@ -325,3 +325,7 @@ label{
 .cursor-pointer {
     cursor: pointer;
 }
+
+:host-context(html[dir="rtl"]) .label-text {
+  display: flex;
+}
