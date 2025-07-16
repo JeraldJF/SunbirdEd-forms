@@ -16,7 +16,7 @@ const moment = moment_;
 })
 export class DynamicFormComponent implements OnInit, OnChanges, OnDestroy  {
   @Input() config;
-  @Input() labelConfig;
+  @Input() labelConfig: Record<string, any>;
   @Output() initialize = new EventEmitter();
   @Output() finalize = new EventEmitter();
 

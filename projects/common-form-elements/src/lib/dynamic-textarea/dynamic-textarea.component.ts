@@ -13,7 +13,7 @@ export class DynamicTextareaComponent implements OnInit {
 
   @Input() label: String;
   @Input() placeholder: String;
-  @Input() labelConfig;
+  @Input() labelConfig: Record<string, any>;
   @Input() formControlRef: FormControl;
   @Input() field: FieldConfig<String>;
   @Input() validations?: any;
