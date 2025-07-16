@@ -3,7 +3,7 @@
   <textarea class="sb-textarea" [formControl]="formControlRef" rows="5" name="sb-textarea" placeholder={{placeholder}} [attr.disabled]="disabled ? true : null">
   </textarea>
   <div class="remaining-length" *ngIf="remainderValidLength$">
-     {{remainderValidLength$ | async}} Characters left
+     {{remainderValidLength$ | async}} {{labelConfig?.ce_charactersLeft || 'Characters left'}}
   </div>
   <ng-container *ngFor="let validation of validations">
     <div class="cf-error label-text"

@@ -19,6 +19,7 @@ export class DynamicFrameworkCategoryNestedSelectComponent implements OnInit, On
   @Input() field: FieldConfig<String>;
   @Input() options: any;
   @Input() label?: string;
+  @Input() labelConfig;
   @Input() labelHtml: any;
   @Input() placeholder?: string;
   @Input() isMultiple = true;

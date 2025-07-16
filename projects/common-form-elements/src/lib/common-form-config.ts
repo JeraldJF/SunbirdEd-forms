@@ -109,6 +109,7 @@ export interface FieldConfig<T, F extends FieldConfigInputType = any> {
   value?: any;
   terms?: any;
   range?: any;
+  rangeObj?: any;
   depends?: FormControl[];
   dependencyTerms?: any;
   output?: string;

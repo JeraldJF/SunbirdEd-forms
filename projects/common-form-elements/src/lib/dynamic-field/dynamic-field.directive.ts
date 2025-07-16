@@ -74,6 +74,7 @@ export class DynamicFieldDirective implements OnInit {
   @Input() dependencyTerms?: any = [];
   @Input() default: any;
   @Input() dataLoadStatusDelegate: Subject<'LOADING' | 'LOADED'>;
+  @Input() labelConfig: any;
 
   componentRef: any;
 
@@ -111,6 +112,7 @@ export class DynamicFieldDirective implements OnInit {
       this.componentRef.instance.validations = this.validations;
       this.componentRef.instance.disabled = this.disabled;
       this.componentRef.instance.visible = this.visible;
+      this.componentRef.instance.labelConfig = this.labelConfig;
     }
 
     // this.componentRef.instance = {

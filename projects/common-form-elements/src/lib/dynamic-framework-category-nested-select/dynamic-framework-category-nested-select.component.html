@@ -7,7 +7,7 @@
     <div class="list-border" (click)="openModal($event)">
       <ul [ngClass]="{'disabled': disabled === true ? true : ( depends ? (isDependsInvalid ? true : null) : null ) }" [attr.disabled]="disabled ? true : ( depends ? (isDependsInvalid ? true : null) : null )">
         <ng-container *ngIf="isMultiple">
-          <li *ngIf="!formControlRef.value || !formControlRef.value?.length" class="placeholder">{{placeholder}}</li>
+          <li *ngIf="!formControlRef.value || !formControlRef.value?.length" class="placeholder sb-rtl-li">{{placeholder}}</li>
           <ng-container *ngIf="formControlRef.value?.length">
             <span *ngFor="let value of formControlRef.value; let index=index">
               {{optionValueToOptionLabelMap.get(fromJS(value))}}
@@ -18,7 +18,7 @@
         </ng-container>
 
         <ng-container *ngIf="!isMultiple">
-          <li *ngIf="!formControlRef.value" class="placeholder">{{placeholder}}</li>
+          <li *ngIf="!formControlRef.value" class="placeholder sb-rtl-li">{{placeholder}}</li>
 
           <span *ngIf="formControlRef.value">{{optionValueToOptionLabelMap.get(fromJS(formControlRef.value))}}</span>
         </ng-container>
@@ -32,7 +32,7 @@
           </div>
           <div class="body">
             <ul>
-              <li *ngFor="let option of resolvedOptions; let i=index">
+              <li *ngFor="let option of resolvedOptions; let i=index" class="sb-rtl-li">
                 <div (click)="addSelected(option)" class="row">
                   <label class="container" style="pointer-events: none">
                     <input [checked]="!_.isEmpty(field.output) ? tempValue.includes(option.get(field.output)) : tempValue.includes(option.get('name'))" class="sb-checkbox" type="checkbox">
@@ -56,11 +56,11 @@
     </div>
     <div class="sb-modal-dropdown-web" *ngIf="platform === 'web'"  [hidden]="!showModal" >
       <ul>
-        <li (click)="checkUncheckAll()">
+        <li class="sb-rtl-li" (click)="checkUncheckAll()">
             <input type="checkbox" [checked]="masterSelected">
-            <label class="cursor-pointer d-inline-block">{{ masterSelected ? 'Unselect All': 'Select All' }}</label>
+            <label class="cursor-pointer d-inline-block">{{ masterSelected ? labelConfig?.ce_unselectAll || 'Unselect All': labelConfig?.ce_selectAll || 'Select All' }}</label>
         </li>
-        <li *ngFor="let option of resolvedOptions; let i=index" (click)="addSelected(option); onSubmit();" [ngClass]="{'selected-option': !_.isEmpty(field.output) ? tempValue.includes(option.get(field.output)) : tempValue.includes(option.get('name'))}">
+        <li *ngFor="let option of resolvedOptions; let i=index" (click)="addSelected(option); onSubmit();" [ngClass]="{'selected-option': !_.isEmpty(field.output) ? tempValue.includes(option.get(field.output)) : tempValue.includes(option.get('name'))}" class="sb-rtl-li">
             <input type="checkbox" [checked]="!_.isEmpty(field.output) ? tempValue.includes(option.get(field.output)) : tempValue.includes(option.get('name'))" >
             <label class="cursor-pointer d-inline-block">{{option.get('name')}}</label>
         </li>

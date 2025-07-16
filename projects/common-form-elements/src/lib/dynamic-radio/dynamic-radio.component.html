@@ -10,10 +10,10 @@
         </div>
       </ng-container>
       <ng-container *ngIf="field.range && isOptionsArray(field.range) && !isOptionsArrayMap(field.range) && !field.association">
-        <div class="sb-radio-btn-checkbox sb-radio-btn-primary"  *ngFor="let option of field.range">
-          <input [attr.disabled]="disabled ? true : null" type="radio" [formControl]="formControlRef" id="{{_.kebabCase(field.name) || field.code}}_{{_.kebabCase(option.name || option)}}"
-          name="{{_.kebabCase(field.name) || field.code}}" [value]="getOptionValueForRange(option, 'array')">
-          <label *ngIf="label" for="{{_.kebabCase(field.name) || field.code}}_{{_.kebabCase(option.name || option)}}">{{option.name || option}}</label>
+        <div class="sb-radio-btn-checkbox sb-radio-btn-primary"  *ngFor="let option of field.rangeObj">
+          <input [attr.disabled]="disabled ? true : null" type="radio" [formControl]="formControlRef" id="{{_.kebabCase(field.name) || field.code}}_{{_.kebabCase(option.name || option.value || option)}}"
+          name="{{_.kebabCase(field.name) || field.code}}" [value]="getOptionValueForRange(option.value, 'array')">
+          <label *ngIf="label" for="{{_.kebabCase(field.name) || field.code}}_{{_.kebabCase(option.name || option.value || option)}}">{{option.name || option.label || option}}</label>
         </div>
       </ng-container>
     </div>

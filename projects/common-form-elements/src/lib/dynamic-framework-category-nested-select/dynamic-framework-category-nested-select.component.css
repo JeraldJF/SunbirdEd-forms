@@ -327,3 +327,7 @@ label{
 :host-context(html[dir="rtl"]) .label-text {
   display: flex;
 }
+
+html[dir="rtl"] .sb-rtl-li {
+  text-align: right;
+}
