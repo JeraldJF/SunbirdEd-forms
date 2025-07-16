@@ -328,6 +328,6 @@ label{
   display: flex;
 }
 
-html[dir="rtl"] .sb-rtl-li {
+:host-context(html[dir="rtl"]) .sb-rtl-li {
   text-align: right;
-}
+} 
